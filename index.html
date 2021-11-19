@@ -44,9 +44,34 @@
 
       <!-- SLider -->
       <div id="slider">
-        <div class="slider-content text-center">
-          <h2 class="slider-heading">New York</h2>
-          <p class="slider-desc">The atmosphere in New York is lorem ipsum.</p>
+        <div class="slider-content js-slider-content">
+          <img src="../assets/image/sliders/new_york.jpg" alt="New York" />
+          <div class="slider-text text-center">
+            <h2 class="slider-heading">New York</h2>
+            <p class="slider-desc">
+              The atmosphere in New York is lorem ipsum.
+            </p>
+          </div>
+        </div>
+
+        <div class="slider-content js-slider-content">
+          <img src="../assets/image/sliders/Chicago.jpg" alt="New York" />
+          <div class="slider-text text-center">
+            <h2 class="slider-heading">Chicago</h2>
+            <p class="slider-desc">
+              Thank you, Chicago - A night we won't forget.
+            </p>
+          </div>
+        </div>
+
+        <div class="slider-content js-slider-content">
+          <img src="../assets/image/sliders/los_angeles.jpg" alt="New York" />
+          <div class="slider-text text-center">
+            <h2 class="slider-heading">Los Angeles</h2>
+            <p class="slider-desc">
+              We had the best time playing at Venice Beach!
+            </p>
+          </div>
         </div>
       </div>
 
@@ -303,6 +328,27 @@
         </footer>
       </div>
     </div>
+
+    <!-- JS Slideshow -->
+    <script>
+      var slideIndex = 0;
+      changeSlide();
+
+      function changeSlide() {
+        var slides = document.getElementsByClassName('js-slider-content');
+
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(changeSlide, 2000); // Change image every 2 seconds
+      }
+    </script>
 
     <!-- JS Buy Ticket -->
     <script>
